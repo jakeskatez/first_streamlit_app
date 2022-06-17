@@ -23,4 +23,10 @@ fruits_to_show  = my_fruit_list.loc[fruits_selected]
 #display the data
 streamlit.dataframe(fruits_to_show)
 
+#fruityvice api display
 streamlit.text(fruityvice_response.json())
+
+# take json and normalize
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+# output it the screen as a table 
+streamlit.dataframe(fruityvice_normalized)
